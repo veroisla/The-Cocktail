@@ -8,7 +8,29 @@
     <title>Evaluación final módulo JS</title>
   </head>
   <body class="body">
-    <include src="./partials/cocktails.html"></include>
+    <main>
+      <!-- de aqui -->
+      <div>
+        <h2>Buscador Cócteles:</h2>
+        <form>
+          <input type="text" class="js_input" />
+          <button type="button" class="js_buttonSearch">Buscar</button>
+          <button type="button" class="js_buttonReset">Reset</button>
+        </form>
+        <div class="showMe">
+          <section class="favouriteList">
+            <h2>Lista de bebidas favoritas</h2>
+          </section>
+          <section class="totalList">
+            <h2>Lista total bebidas</h2>
+            <ul class="js_listDrinks"></ul>
+          </section>
+        </div>
+      </div>
+      <!-- hasta aqui partials cocktaisl -->
+      <include src="./partials/cocktails.html"></include>
+    </main>
+
     <script type="text/javascript" src="./assets/js/main.js"></script>
   </body>
 </html>

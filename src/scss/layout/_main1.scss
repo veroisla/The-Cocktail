@@ -2,3 +2,8 @@
     width: 100px;
 }
 
+.showMe {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

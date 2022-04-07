@@ -20,7 +20,7 @@ function renderListDrinks() {
 }
 
 function handleClickResearch() {
-  //Llamo al fecth, cuando la usuaria hace click en buscar
+  //Llamo al fecth, cuando la usuaria hace click en buscar, es entonces cuando me sale la lista de bebidas que incluyen lo que escribe la usuaria
   fetch(
     `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${input.value}`
   )
