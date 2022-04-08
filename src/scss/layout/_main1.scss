@@ -1,12 +1,32 @@
+
+//CAMBAIR ESTILOS, USAR SASS
+
 .drinks_Image{
     width: 100px;
-}
+    border: solid 5px rgba(10, 23, 24, 0.349);
 
+}
+.drinks_Image_Favourite {
+    width: 100px;
+    border: solid 5px rgba(53, 181, 255, 0.349); //en vez de borde, background?
+}
 .showMe {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
+
 .favouritesDrinks {
     background-color: aquamarine;
 }
+
+.favouriteName {
+    color: rgb(15, 62, 218);
+}
+.nameDrinks {
+   color : rgba(3, 3, 3, 0.349);
+}
+.list {
+    color: rgba(10, 23, 24, 0.349);
+}
+

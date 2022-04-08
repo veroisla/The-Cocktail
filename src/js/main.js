@@ -6,6 +6,7 @@ const buttonSearch = document.querySelector('.js_buttonSearch');
 const buttonReset = document.querySelector('.js_buttonReset');
 const listFavouriteDrinks = document.querySelector('.js_favouriteDrinks');
 let drinks = []; //listado completo de bebidas
+let favouriteDrinks = []; //listado bebidas favoritas
 
 //PINTAR HTML
 
@@ -13,7 +14,7 @@ function renderListDrinks() {
   let html = '';
   for (const drinksOptions of drinks) {
     html += `<li class= "js_liDrinks" id= ${drinksOptions.idDrink} >`;
-    html += `<h3> ${drinksOptions.strDrink}</h3>`;
+    html += `<h3 class="nameDrinks"> ${drinksOptions.strDrink}</h3>`;
     html += `<img src=${drinksOptions.strDrinkThumb} alt="Imagen Bebida" class="drinks_Image"/>`;
     html += `</li>`;
   }
@@ -31,7 +32,6 @@ function listenerDrinks() {
 }
 
 //FAVORITOS
-let favouriteDrinks = []; //listado bebidas favoritas
 
 // CURRENT TARGET PARA SABER A QUE ELEMENTO DAMOS CLICK
 function handleClickDrink(event) {
@@ -52,6 +52,9 @@ function handleClickDrink(event) {
   } else {
     favouriteDrinks.splice(foundIndexFavoritedrink, 1);
   }
+  //guardar en LS, mi lista de bebidas favoritas
+  localStorage.setItem('listFavouriteDrinks', JSON.stringify(favouriteDrinks));
+  //PINTAR LISTA FAV
   renderFavouriteDrinks();
 }
 
@@ -59,15 +62,26 @@ function handleClickDrink(event) {
 function renderFavouriteDrinks() {
   let htmlFav = '';
   for (const favouriteOptions of favouriteDrinks) {
-    htmlFav += `<li class= "js_liFavourite" ${favouriteOptions.idDrink}>`;
-    htmlFav += `<h3> ${favouriteOptions.strDrink}</h3>`;
-    htmlFav += `<img src=${favouriteOptions.strDrinkThumb} alt="Imagen Bebida" class="drinks_Image"/>`;
+    htmlFav += `<li class= "favouriteDrinks js_liFavourite" ${favouriteOptions.idDrink}>`;
+    htmlFav += `<h3 class="favouriteName"> ${favouriteOptions.strDrink}</h3>`;
+    htmlFav += `<img src=${favouriteOptions.strDrinkThumb} alt="Imagen Bebida" class="drinks_Image_Favourite"/>`;
     htmlFav += `</li>`;
   }
   listFavouriteDrinks.innerHTML = htmlFav;
 }
 
-function handleClickResearch() {
+//LOCAL STORAGE
+
+const listFavouriteDrinksLS = JSON.parse(
+  localStorage.getItem('listFavouriteDrinks')
+);
+if (listFavouriteDrinksLS !== null) {
+  favouriteDrinks = listFavouriteDrinksLS; //guardo lo que tenía en mi lista de favoritos en mi variable favoritos
+  renderFavouriteDrinks(favouriteDrinks);
+}
+
+function handleClickResearch(event) {
+  event.preventDefault();
   fetch(
     `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${input.value}`
   )
@@ -75,22 +89,17 @@ function handleClickResearch() {
     .then((data) => {
       drinks = data.drinks;
 
-      //recorrer array de drinks, y darle src predeterminada.
-
-      // const imageCocktail = './images/cocktail.jpg';
-      // // if (drinks.strDrinkThumb === null) {
-      // //   drinksOptions.src = data.imageCocktail;
-      // // } else {
-      // //   img.src = drinksOptions.strDrinkThumb;
-      // // }
+      //IMG PREDETERMINADA, recorrer array de drinks, y darle src predeterminada.
 
       renderListDrinks();
     });
 }
 
 //FUNCIÓN RESET
-// function handleReset() {}
+function handleReset() {
+  console.log('holia');
+}
 
 //EVENTOS BOTONES
 buttonSearch.addEventListener('click', handleClickResearch);
-// buttonReset.addEventListener('click', handleReset);
+buttonReset.addEventListener('click', handleReset);
