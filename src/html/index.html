@@ -4,29 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Montserrat+Alternates:ital@1&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/css/main.css" />
     <title>Evaluación final módulo JS</title>
   </head>
   <body class="body">
-    <main>
-      <!-- de aqui -->
+    <header class="header">
+      <h2 class="header__title">Buscador Cócteles:</h2>
+    </header>
+    <main class="main">
       <div>
-        <h2>Buscador Cócteles:</h2>
-        <form>
-          <input type="text" class="js_input" />
-          <button type="button" class="js_buttonSearch">Buscar</button>
-          <button type="button" class="js_buttonReset">Reset</button>
+        <form class="form">
+          <input
+            type="text"
+            class="form__input js_input"
+            placeholder="Busca tus coktails favoritos"
+          />
+          <button type="button" class="form__buttonSearch js_buttonSearch">
+            Buscar
+          </button>
+          <button type="button" class="form__buttonReset js_buttonReset">
+            Reset
+          </button>
+          <div class="section">
+            <section class="section__favourites">
+              <h2 class="section__title">Lista de bebidas favoritas</h2>
+              <ul class="section__list js_favouriteDrinks"></ul>
+            </section>
+            <section class="section__cocktails">
+              <h2 class="section__title">Lista total bebidas</h2>
+              <ul class="section__list js_listDrinks"></ul>
+            </section>
+          </div>
         </form>
-        <div class="showMe">
-          <section class="favouriteList">
-            <h2 class="list">Lista de bebidas favoritas</h2>
-            <ul class="js_favouriteDrinks"></ul>
-          </section>
-          <section class="totalList">
-            <h2 class="list">Lista total bebidas</h2>
-            <ul class="js_listDrinks"></ul>
-          </section>
-        </div>
       </div>
       <!-- hasta aqui partials cocktaisl -->
       <include src="./partials/cocktails.html"></include>
