@@ -98,8 +98,9 @@ function handleClickResearch(event) {
 
 function handleReset() {
   input.value = '';
-
+  favouriteDrinks = [];
   localStorage.clear(favouriteDrinks);
+  listFavouriteDrinks.innerHTML = '';
 }
 
 //EVENTOS BOTONES
