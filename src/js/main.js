@@ -7,6 +7,7 @@ const buttonReset = document.querySelector('.js_buttonReset');
 let listFavouriteDrinks = document.querySelector('.js_favouriteDrinks');
 let drinks = []; //listado completo de bebidas
 let favouriteDrinks = []; //listado bebidas favoritas
+const icon = document.querySelector('.js_icon');
 
 //PINTAR LISTA TOTAL BEBIDAS
 
@@ -63,6 +64,7 @@ function renderFavouriteDrinks() {
   for (const favouriteOptions of favouriteDrinks) {
     htmlFav += `<li class= "section__favourites__item js_liFavourite" ${favouriteOptions.idDrink}>`;
     htmlFav += `<h3 class="section__favourites__name"> ${favouriteOptions.strDrink}</h3>`;
+    htmlFav += `<div class="section__favourites__icon js_icon"><i class="fa-solid fa-circle-xmark"></i></div>`;
     htmlFav += `<img src=${favouriteOptions.strDrinkThumb} alt="Imagen Bebida" class="section__favourites__image"/>`;
     htmlFav += `</li>`;
   }
@@ -94,6 +96,12 @@ function handleClickResearch(event) {
     });
 }
 
+//FUNCIÓN BORRAR  FAVORITOS
+
+function handleErase() {
+  console.log('holis');
+}
+
 //FUNCIÓN RESET
 
 function handleReset() {
@@ -101,9 +109,11 @@ function handleReset() {
   favouriteDrinks = [];
   localStorage.clear(favouriteDrinks);
   listFavouriteDrinks.innerHTML = '';
+  listDrinks.innerHTML = '';
 }
 
 //EVENTOS BOTONES
 
 buttonSearch.addEventListener('click', handleClickResearch);
 buttonReset.addEventListener('click', handleReset);
+icon.addEventListener('click', handleErase);
