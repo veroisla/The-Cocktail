@@ -4,6 +4,7 @@ const listDrinks = document.querySelector('.js_listDrinks');
 const input = document.querySelector('.js_input');
 const buttonSearch = document.querySelector('.js_buttonSearch');
 const buttonReset = document.querySelector('.js_buttonReset');
+const buttonResetFav = document.querySelector('.js_resetfav');
 let listFavouriteDrinks = document.querySelector('.js_favouriteDrinks');
 let drinks = [];
 let favouriteDrinks = [];
