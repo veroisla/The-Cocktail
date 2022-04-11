@@ -4,51 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/016f8587a2.js"
-      crossorigin="anonymous"
-    ></script>
-    <style>
-      @import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
-    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Dancing+Script:wght@601&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/css/main.css" />
     <title>Evaluación final módulo JS</title>
   </head>
   <body class="body">
-    <header class="header">
-      <h2 class="header__title">Nuestros mejores cockatils:</h2>
-    </header>
+    <include src="./partials/header.html"></include>
     <main class="main">
-      <div>
-        <form class="form">
-          <input
-            type="text"
-            class="form__input js_input"
-            placeholder="Busca tus coktails favoritos"
-          />
-          <button type="button" class="form__buttonSearch js_buttonSearch">
-            Buscar
-          </button>
-          <button type="button" class="form__buttonReset js_buttonReset">
-            Reset
-          </button>
-          <div class="section">
-            <section class="section__favourites">
-              <h2 class="section__title">Lista de bebidas favoritas</h2>
-              <ul class="section__list js_favouriteDrinks"></ul>
-            </section>
-            <section class="section__cocktails">
-              <h2 class="section__title">Lista total bebidas</h2>
-              <ul class="section__list js_listDrinks"></ul>
-            </section>
-          </div>
-        </form>
-      </div>
-      <!-- hasta aqui partials cocktaisl -->
-      <include src="./partials/cocktails.html"></include>
+      <form class="form">
+        <include src="./partials/button.html"></include>
+        <div class="section">
+          <include src="./partials/listFav.html"></include>
+          <include src="./partials/listCocktails.html"></include>
+        </div>
+      </form>
     </main>
-    <!-- HACER PARTIALS -->
-
     <script type="text/javascript" src="./assets/js/main.js"></script>
   </body>
 </html>
