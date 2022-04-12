@@ -5,20 +5,11 @@ const input = document.querySelector('.js_input');
 const buttonSearch = document.querySelector('.js_buttonSearch');
 const buttonReset = document.querySelector('.js_buttonReset');
 // const buttonResetFav = document.querySelector('.js_resetfav');
-const buttonLog = document.querySelector('.js__new__button');
 let listFavouriteDrinks = document.querySelector('.js_favouriteDrinks');
 let drinks = [];
 let favouriteDrinks = [];
 
 //PINTAR LISTA TOTAL BEBIDAS
-
-function logButton() {
-  for (const element of favouriteDrinks) {
-    console.log(element.strDrink);
-  }
-}
-
-buttonLog.addEventListener('click', logButton);
 
 function renderListDrinks() {
   let html = '';
