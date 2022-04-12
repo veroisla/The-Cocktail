@@ -1,104 +1,123 @@
 .body {
-    background-image: url(../images/flower2.png);
-    background-size: cover;
-    background-position: bottom center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-color: #1B4748;
 }
+
+//HEADER
 
 .header {
   text-align: center;
-  margin-bottom: 40px;
-  
-
+  margin-bottom: 20px;
+ 
   &__div {
    display: flex;
    justify-content: center;
    margin-top: 40px;
+   align-items: center;
   }
  
 
   &__title {
       font-size: 50px;
-      color: $color_title;
+      color: $color__letter;
       font-family: $font_title;
-      padding: 40px;
+      margin-right: 30px;
+      
       
   }
 
   &__logo {
-  width: 50px;
+  height: 70px;
+  width: auto;
+  
   }
 }
 
 
 
+//INPUT, SEARCH Y RESET
+
 .form {
-    margin-top: 20px;
-    margin-left: 20px;
+
+    &__div {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 60px;
+        margin-top: 20px;
+    }
 
     &__input {
         padding: 8px;
         border-radius: 10px;
         margin-right: 20px;
-        border:$button_border solid 2px;
     }
 
-    &__buttonSearch {
+    &__button {
         padding: 8px;
-        border: solid 1px $color_dark_grey;
         border-radius: 10px;
-        margin-right: 10px;
-        background-color: $button;
         border: $button_border solid 2px;
-        color: $letter_button;
+        color: $color__letter;
 
         &:hover {
-            background-color: $button_hover;
             cursor: pointer;
         }
     }
-        
 
+    &__buttonSearch {
+        margin-right: 10px;
+    
+        &:hover {
+            background-color: $button_hover;
+        }
+    }
+        
    &__buttonReset{
-    padding: 8px;
-    border: solid 1px $color_dark_grey;
-    border-radius: 10px;
-    background-color: $button;
-    border: $button_border solid 2px;
-    color: $letter_button;
 
     &:hover {
         background-color: $button_hover;
-        cursor: pointer;
     }
-  
 }
 }
 
+//LISTA FAVORITOS Y LISTA BÚSQUEDA
 
 .section {
 
-    margin-top: 60px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-   
+    &__div {
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+        margin-top: 60px;
+        width: 100%;
+    }
+
     &__title {
         font-family: $font_list;
-        color: $color_dark_blue;
-        margin-bottom: 20px;
+        color: $color__letter;
+        margin-bottom: 30px;
     }
 
-    &__list {
-        list-style-type: none;
-    }
+
+
+    //SECTION COCKTAILS
 
     &__cocktails {
+        margin-right: 60px;
+        width: 50%;
+
+        &__div {
+         display: flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         justify-content: space-around;
+        
+        }
+    
 
     &__name {
         margin-bottom: 5px;
         font-family: $font_list;
+        color: $color__letter;
+        font-size: 14px;
 
         &:hover {
             cursor: pointer;
@@ -107,10 +126,7 @@
 
     &__image {
        margin-bottom: 15px;
-       padding: 2px;
-       width: 130px;
-       border: 4px solid $color_dark_blue;
-       background-color: $color_dark_blue;
+       height: 120px;
        border-radius:  15%;
 
        &:hover {
@@ -119,15 +135,17 @@
 }
 
 }
+//SECTION FAVOURITES
 
      &__favourites {
-        // border: 3px solid black;
-        // width: 40%;
+        margin-left: 60px;
+        width: 50%;
 
       &__name {
       margin-bottom: 5px;
-      color:$color_fav;
+      color:$color__letter;
       font-family: $font_list;
+      font-size: 14px;
 
       &:hover {
           cursor: pointer;
@@ -137,9 +155,7 @@
      &__image {
 
        margin-bottom: 15px;
-       padding: 2px;
-       width: 130px;
-       border: 4px solid $color_fav;
+       width: 80px;
        background-color: $color_fav;
        border-radius:  15%;
 
@@ -147,35 +163,44 @@
         cursor: pointer;
     }
 }
-  &__icon {
+    &__icon {
         color: $color_fav;
         margin-left: 10px;
     }
 
     &__reset {
-        padding: 10px;
-        border: solid 1px $color_dark_grey;
-        border-radius: 10px;
         margin-bottom: 20px;
         background-color: $button;
-        border: $button_border solid 2px;
-        color: $letter_button;
+        color: $color__letter;
 
     &:hover {
         background-color: $button_hover;
-        color: $letter_button;
-        cursor: pointer;
     }
     }
 }
 }
 
+
+
+
 // Modificaciones al elegir favorito, en lista total de bebidas. 
-.favouriteCocktail {
-    border-color: $color_fav;
-    background-color: $color_fav;
-}
 
 .nameFavourite {
     color: $color_fav;
+}
+
+.div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #296B6C;
+    margin-bottom: 20px;
+    margin-right: 15px;
+    border-radius: 15%;
+}
+
+.section__div {
+    display: flex;
+    flex-direction: row;
+    
 }

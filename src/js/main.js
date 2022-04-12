@@ -4,7 +4,7 @@ const listDrinks = document.querySelector('.js_listDrinks');
 const input = document.querySelector('.js_input');
 const buttonSearch = document.querySelector('.js_buttonSearch');
 const buttonReset = document.querySelector('.js_buttonReset');
-// const buttonResetFav = document.querySelector('.js_resetfav');
+const buttonResetFav = document.querySelector('.js_resetfav');
 let listFavouriteDrinks = document.querySelector('.js_favouriteDrinks');
 let drinks = [];
 let favouriteDrinks = [];
@@ -31,19 +31,13 @@ function renderListDrinks() {
     }
 
     html += `<li class= "section__cocktails__item js_liDrinks " id= ${drinksOptions.idDrink} >`;
-    html += `<h3 class="section__cocktails__name  ${nameFavourite}"> ${drinksOptions.strDrink}</h3>`;
-    html += `<p class="section__cocktails__p">${drinksOptions.strCategory}</p>`;
-    html += `<img src=${drinksOptions.strDrinkThumb} alt="Imagen Bebida" class="section__cocktails__image ${classFavourite}"/>`;
+    html += `<div class="div"><h3 class="section__cocktails__name  ${nameFavourite}"> ${drinksOptions.strDrink}</h3>`;
+    html += `<img src=${drinksOptions.strDrinkThumb} alt="Imagen Bebida" class="section__cocktails__image ${classFavourite}"/></div>`;
     html += `</li>`;
   }
   listDrinks.innerHTML = html;
   //llamamos a función listenerDrinks, una vez se han pintado las paletas
   listenerDrinks();
-  function logButton() {
-    for (const element of favouriteDrinks) {
-      console.log();
-    }
-  }
 }
 
 //ESCUCHAMOS EVENTO CLICK ASOCIADO A CADA COCKTAIL
