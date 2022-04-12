@@ -89,7 +89,7 @@ function renderFavouriteDrinks() {
   let htmlFav = '';
   for (const favouriteOptions of favouriteDrinks) {
     htmlFav += `<li class= "section__favourites__item js_liFavourite" ${favouriteOptions.idDrink}>`;
-    htmlFav += `<h3 class="section__favourites__name"> ${favouriteOptions.strDrink}</h3>`;
+    htmlFav += `<h3 class="section__favourites__name"> ${favouriteOptions.strDrink} <i class="section__favourites__icon js_icon fa-solid fa-heart-circle-minus"></i></h3>`;
     htmlFav += `<img src=${favouriteOptions.strDrinkThumb} alt="Imagen Bebida" class="section__favourites__image"/>`;
     htmlFav += `</li>`;
   }
@@ -128,7 +128,13 @@ function handleReset() {
   listDrinks.innerHTML = '';
 }
 
+function handleResetFav() {
+  listFavouriteDrinks.innerHTML = '';
+  localStorage.clear(favouriteDrinks);
+  favouriteDrinks = [];
+}
 //EVENTOS BOTONES
 
 buttonSearch.addEventListener('click', handleClickResearch);
 buttonReset.addEventListener('click', handleReset);
+buttonResetFav.addEventListener('click', handleResetFav);
