@@ -23,7 +23,7 @@ function renderListDrinks() {
     });
 
     if (foundIndexFavoritedrink !== -1) {
-      classFavourite = 'favouriteCocktail';
+      classFavourite = 'classFavourite';
       nameFavourite = 'nameFavourite';
     } else {
       classFavourite = '';
@@ -31,7 +31,7 @@ function renderListDrinks() {
     }
 
     html += `<li class= "section__cocktails__item js_liDrinks " id= ${drinksOptions.idDrink} >`;
-    html += `<div class="section__cocktails__div2 ${classFavourite}"><h3 class="section__cocktails__name  ${nameFavourite}"> ${drinksOptions.strDrink}</h3>`;
+    html += `<div class="${classFavourite} section__cocktails__div2 "><h3 class="section__cocktails__name  ${nameFavourite}"> ${drinksOptions.strDrink}</h3>`;
     html += `<img src=${drinksOptions.strDrinkThumb} alt="Imagen Bebida" class="section__cocktails__image "/></div>`;
     html += `</li>`;
   }

@@ -49,12 +49,16 @@
         padding: 8px;
         border-radius: 10px;
         margin-right: 20px;
+        background-color: $color__letter;
+        outline: none;
+        border: 0;
     }
 
     &__button {
         padding: 8px;
         border-radius: 10px;
-        border: $button_border solid 2px;
+        border: solid 1px $button_color;
+        background-color: $button_color;
         color: $color__letter;
 
         &:hover {
@@ -126,7 +130,12 @@
         margin-bottom: 20px;
         margin-right: 15px;
         border-radius: 15%;
+
+        &:hover {
+            background-color: $fav_background;
+        }
     }
+    
 
     &__name {
          padding-top: 10px;
@@ -158,10 +167,18 @@
         width: 25%;
         margin-right: 30px;
 
+        &__list {
+         display: flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         justify-content: flex-start;
+         list-style-type: none;
+        }
+
       &__name {
         padding-top: 10px;
         font-family: $font_list;
-        color: #FFCC00;
+        color: $fav_letter;
         font-size: 14px;
 
       &:hover {
@@ -178,7 +195,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #296B6C; //cambniar color!!!
+    background-color: $fav_background; //cambniar color!!!
     margin-bottom: 20px;
     margin-right: 15px;
     border-radius: 15%;
@@ -199,7 +216,7 @@
 
     &__reset {
         margin-bottom: 20px;
-        background-color: $button;
+        background-color: $button_color;
         color: $color__letter;
 
     &:hover {
@@ -213,14 +230,12 @@
 // Modificaciones al elegir favorito, en lista total de bebidas. 
 
 .nameFavourite {
-    color: #FFCC00;
+    color: $fav_letter;
 }
 
-
-
-// .classFavourite {
-//     background-color: rgb(132, 0, 255);
-// }
+.classFavourite {
+    background-color: $fav_background;
+}
 
 .section__div {
     display: flex;
