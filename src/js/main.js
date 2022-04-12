@@ -4,12 +4,21 @@ const listDrinks = document.querySelector('.js_listDrinks');
 const input = document.querySelector('.js_input');
 const buttonSearch = document.querySelector('.js_buttonSearch');
 const buttonReset = document.querySelector('.js_buttonReset');
-const buttonResetFav = document.querySelector('.js_resetfav');
+// const buttonResetFav = document.querySelector('.js_resetfav');
+const buttonLog = document.querySelector('.js__new__button');
 let listFavouriteDrinks = document.querySelector('.js_favouriteDrinks');
 let drinks = [];
 let favouriteDrinks = [];
 
 //PINTAR LISTA TOTAL BEBIDAS
+
+function logButton() {
+  for (const element of favouriteDrinks) {
+    console.log(element.strDrink);
+  }
+}
+
+buttonLog.addEventListener('click', logButton);
 
 function renderListDrinks() {
   let html = '';
@@ -32,12 +41,18 @@ function renderListDrinks() {
 
     html += `<li class= "section__cocktails__item js_liDrinks " id= ${drinksOptions.idDrink} >`;
     html += `<h3 class="section__cocktails__name  ${nameFavourite}"> ${drinksOptions.strDrink}</h3>`;
+    html += `<p class="section__cocktails__p">${drinksOptions.strCategory}</p>`;
     html += `<img src=${drinksOptions.strDrinkThumb} alt="Imagen Bebida" class="section__cocktails__image ${classFavourite}"/>`;
     html += `</li>`;
   }
   listDrinks.innerHTML = html;
   //llamamos a función listenerDrinks, una vez se han pintado las paletas
   listenerDrinks();
+  function logButton() {
+    for (const element of favouriteDrinks) {
+      console.log();
+    }
+  }
 }
 
 //ESCUCHAMOS EVENTO CLICK ASOCIADO A CADA COCKTAIL
@@ -54,15 +69,17 @@ function listenerDrinks() {
 function handleClickDrink(event) {
   const idDrinks = event.currentTarget.id;
 
+  //find, busca elemento del listado y me devuelve el elemento. Po cada elemento del listado de favoritos, comprueba si el id de favoritos es igual al id clicado. Si está la quito y si no la agrego
   const foundFavoriteDrink = drinks.find((favorites) => {
     return favorites.idDrink === idDrinks;
   });
 
-  console.log(foundFavoriteDrink);
+  //findindex: busca la posición en el listado.
   const foundIndexFavoritedrink = favouriteDrinks.findIndex((favorites) => {
     return favorites.idDrink === idDrinks;
   });
 
+  // si no está en el listado lo añado
   if (foundIndexFavoritedrink === -1) {
     favouriteDrinks.push(foundFavoriteDrink);
   } else {
