@@ -80,6 +80,11 @@
 
 //LISTA FAVORITOS Y LISTA BÚSQUEDA
 
+
+
+
+
+
 .section {
 
     &__div {
@@ -94,6 +99,7 @@
         font-family: $font_list;
         color: $color__letter;
         margin-bottom: 30px;
+        margin-right: 30px;
     }
 
 
@@ -103,18 +109,21 @@
     &__cocktails {
         margin-right: 60px;
         width: 50%;
+        margin-left: 30px;
+        
 
         &__div {
          display: flex;
          flex-direction: row;
          flex-wrap: wrap;
          justify-content: space-around;
+         list-style-type: none;
         
         }
     
 
     &__name {
-        margin-bottom: 5px;
+         padding-top: 10px;
         font-family: $font_list;
         color: $color__letter;
         font-size: 14px;
@@ -125,7 +134,7 @@
     }
 
     &__image {
-       margin-bottom: 15px;
+       padding: 10px;
        height: 120px;
        border-radius:  15%;
 
@@ -135,30 +144,36 @@
 }
 
 }
+
 //SECTION FAVOURITES
 
      &__favourites {
         margin-left: 60px;
         width: 50%;
+        margin-right: 30px;
+        
 
       &__name {
-      margin-bottom: 5px;
-      color:$color__letter;
-      font-family: $font_list;
-      font-size: 14px;
+        padding-top: 10px;
+        font-family: $font_list;
+        color: $color__letter;
+        font-size: 14px;
 
       &:hover {
           cursor: pointer;
       }
-} 
+     } 
+
+     &__div {
+         display: flex;
+         flex-direction: row;
+     }
 
      &__image {
 
-       margin-bottom: 15px;
-       width: 80px;
-       background-color: $color_fav;
+       padding: 10px;
+       height: 120px;
        border-radius:  15%;
-
        &:hover {
         cursor: pointer;
     }
@@ -202,5 +217,4 @@
 .section__div {
     display: flex;
     flex-direction: row;
-    
 }

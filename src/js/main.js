@@ -83,8 +83,8 @@ function renderFavouriteDrinks() {
   let htmlFav = '';
   for (const favouriteOptions of favouriteDrinks) {
     htmlFav += `<li class= "section__favourites__item js_liFavourite" ${favouriteOptions.idDrink}>`;
-    htmlFav += `<h3 class="section__favourites__name"> ${favouriteOptions.strDrink} <i class="section__favourites__icon js_icon fa-solid fa-heart-circle-minus"></i></h3>`;
-    htmlFav += `<img src=${favouriteOptions.strDrinkThumb} alt="Imagen Bebida" class="section__favourites__image"/>`;
+    htmlFav += `<div class="div"><h3 class="section__favourites__name"> ${favouriteOptions.strDrink} </h3>`;
+    htmlFav += `<img src=${favouriteOptions.strDrinkThumb} alt="Imagen Bebida" class="section__favourites__image"/></div>`;
     htmlFav += `</li>`;
   }
   listFavouriteDrinks.innerHTML = htmlFav;
