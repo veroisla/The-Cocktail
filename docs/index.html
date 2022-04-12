@@ -8,39 +8,55 @@
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Dancing+Script:wght@601&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/016f8587a2.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./assets/css/main.css" />
     <title>Evaluación final módulo JS</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/icon.png" />
   </head>
   <body class="body">
     <header class="header">
       <div class="header__div">
         <h2 class="header__title">The Cocktail</h2>
-        <img src="./assets/images/cocktail.png" class="header__logo" />
+        <img src="../assets/images/icon.png" class="header__logo" />
       </div>
     </header>
 
     <main class="main">
       <form class="form">
-        <input
-          type="text"
-          class="form__input js_input"
-          placeholder="Busca tus coktails favoritos"
-        />
-        <button type="button" class="form__buttonSearch js_buttonSearch">Buscar</button>
-        <button type="button" class="form__buttonReset js_buttonReset">Reset</button>
+        <div class="form__div">
+          <input
+            type="text"
+            class="form__input js_input"
+            placeholder="Busca tus coktails favoritos"
+          />
+          <button type="button" class="form__button form__buttonSearch js_buttonSearch">
+            Buscar
+          </button>
+          <button type="button" class="form__button form__buttonReset js_buttonReset">
+            Reset
+          </button>
+        </div>
 
-        <div class="section">
+        <div class="section section__div">
           <section class="section__favourites">
-            <h2 class="section__title">Tus favoritos:</h2>
-            <!-- <button class="section__favourites__reset js_resetfav" type="button">
-              Borrar Favoritos
-            </button> -->
-            <ul class="section__list js_favouriteDrinks"></ul>
+            <div class="section__favourites__div">
+              <h2 class="section__title">Tus favoritos:</h2>
+              <button
+                class="form__button section__favourites__reset js_resetfav"
+                type="button"
+              >
+                Borrar Favoritos
+              </button>
+            </div>
+            <ul class="js_favouriteDrinks section__cocktails__div"></ul>
           </section>
 
           <section class="section__cocktails">
             <h2 class="section__title">Búsqueda:</h2>
-            <ul class="section__list js_listDrinks"></ul>
+            <ul class="section__cocktails__div js_listDrinks"></ul>
           </section>
 
         </div>

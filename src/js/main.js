@@ -31,8 +31,8 @@ function renderListDrinks() {
     }
 
     html += `<li class= "section__cocktails__item js_liDrinks " id= ${drinksOptions.idDrink} >`;
-    html += `<div class="div"><h3 class="section__cocktails__name  ${nameFavourite}"> ${drinksOptions.strDrink}</h3>`;
-    html += `<img src=${drinksOptions.strDrinkThumb} alt="Imagen Bebida" class="section__cocktails__image ${classFavourite}"/></div>`;
+    html += `<div class="section__cocktails__div2 ${classFavourite}"><h3 class="section__cocktails__name  ${nameFavourite}"> ${drinksOptions.strDrink}</h3>`;
+    html += `<img src=${drinksOptions.strDrinkThumb} alt="Imagen Bebida" class="section__cocktails__image "/></div>`;
     html += `</li>`;
   }
   listDrinks.innerHTML = html;
@@ -83,7 +83,7 @@ function renderFavouriteDrinks() {
   let htmlFav = '';
   for (const favouriteOptions of favouriteDrinks) {
     htmlFav += `<li class= "section__favourites__item js_liFavourite" ${favouriteOptions.idDrink}>`;
-    htmlFav += `<div class="div"><h3 class="section__favourites__name"> ${favouriteOptions.strDrink} </h3>`;
+    htmlFav += `<div class="section__favourites__divFav"><h3 class="section__favourites__name"> ${favouriteOptions.strDrink} </h3>`;
     htmlFav += `<img src=${favouriteOptions.strDrinkThumb} alt="Imagen Bebida" class="section__favourites__image"/></div>`;
     htmlFav += `</li>`;
   }
