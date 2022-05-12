@@ -46,13 +46,33 @@
     }
 
     &__input {
-        padding: 8px;
-        border-radius: 10px;
-        margin-right: 20px;
-        background-color: $color__letter;
-        outline: none;
-        border: 0;
-    }
+    line-height: 28px;
+    border: 2px solid transparent;
+    border-bottom-color: $button_hover;
+    padding: .2rem 0;
+    outline: none;
+    background-color: transparent;
+    color: $color__letter;
+    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    margin-right: 20px;
+   }
+   
+   &__input:focus, input:hover {
+    outline: none;
+    padding: .2rem 1rem;
+    border-radius: 1rem;
+    border-color: $button_hover;
+    // border-color: #7a9cc6;
+   }
+   
+   &__input::placeholder {
+    color: $color__letter;
+   }
+   
+   &__input:focus::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
+   }
 
     &__button {
         padding: 8px;
@@ -99,8 +119,7 @@
     &__title {
         font-family: $font_list;
         color: $color__letter;
-        margin-bottom: 30px;
-        margin-right: 30px;
+        margin: 10px 30px 30px 0px;
     }
 
 
@@ -190,6 +209,7 @@
      &__div {
          display: flex;
          flex-direction: row;
+       justify-content: center;
      }
 
     &__divFav {
