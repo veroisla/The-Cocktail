@@ -1,6 +1,4 @@
-.body {
-    background-color: #1B4748;
-}
+
 
 //HEADER
 
@@ -10,25 +8,22 @@
  
   &__div {
    display: flex;
-   justify-content: center;
-   margin-top: 40px;
+   justify-content: space-around;
+   padding: 30px;
    align-items: center;
+   box-shadow: 0px 2px 6px $--color-light-grey; 
   }
  
 
   &__title {
       font-size: 50px;
-      color: $color__letter;
       font-family: $font_title;
       margin-right: 30px;
-      
-      
   }
 
   &__logo {
   height: 70px;
   width: auto;
-  
   }
 }
 
@@ -40,66 +35,43 @@
 
     &__div {
         display: flex;
-        justify-content: flex-end;
-        margin-right: 60px;
-        margin-top: 20px;
+        justify-content:space-evenly;
+        margin: 70px 20px 50px 20px;
+    }
+
+    &__inputAndIcon {
+        display: flex;
+        align-items: center;
+        margin-right: 8px;
+        border-bottom: 1px solid $--color-pink;
     }
 
     &__input {
-    line-height: 28px;
-    border: 2px solid transparent;
-    border-bottom-color: $button_hover;
-    padding: .2rem 0;
     outline: none;
-    background-color: transparent;
-    color: $color__letter;
-    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
-    margin-right: 20px;
+    border: none;
+    width: 100px;
    }
    
-   &__input:focus, input:hover {
-    outline: none;
-    padding: .2rem 1rem;
-    border-radius: 1rem;
-    border-color: $button_hover;
-    // border-color: #7a9cc6;
-   }
-   
-   &__input::placeholder {
-    color: $color__letter;
-   }
-   
-   &__input:focus::placeholder {
-    opacity: 0;
-    transition: opacity .3s;
-   }
 
     &__button {
         padding: 8px;
-        border-radius: 10px;
-        border: solid 1px $button_color;
-        background-color: $button_color;
-        color: $color__letter;
-
+        border-radius: 5px;
+        border: 2px solid $--color-pink;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: $--color-pink;
+       
+        
         &:hover {
             cursor: pointer;
+            background-color: $--color-pink-ligth;
+            
+            
+
         }
     }
 
-    &__buttonSearch {
-        margin-right: 10px;
-    
-        &:hover {
-            background-color: $button_hover;
-        }
-    }
-        
-   &__buttonReset{
-
-    &:hover {
-        background-color: $button_hover;
-    }
-}
 }
 
 
@@ -118,7 +90,7 @@
 
     &__title {
         font-family: $font_list;
-        color: $color__letter;
+        
         margin: 10px 30px 30px 0px;
     }
 
@@ -159,7 +131,7 @@
     &__name {
          padding-top: 10px;
         font-family: $font_list;
-        color: $color__letter;
+        
         font-size: 14px;
 
         &:hover {
@@ -238,7 +210,7 @@
     &__reset {
         margin-bottom: 20px;
         background-color: $button_color;
-        color: $color__letter;
+       
 
     &:hover {
         background-color: $button_hover;
